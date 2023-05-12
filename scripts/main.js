@@ -1,9 +1,11 @@
 import { MetalOptions } from './MetalOptions.js'
+import { StyleOptions } from './StyleOptions.js'
 
 const container = document.querySelector(".container")
 
 const render = async () => {
     const metalOptionsHTML = await MetalOptions()
+    const styleOptionsHTML = await StyleOptions()
 
     const composedHTML = `
         <h1>Kneel Diamonds</h1>
@@ -20,6 +22,7 @@ const render = async () => {
 
             <section class="choices__styles options">
                 <h2>Styles</h2>
+                ${styleOptionsHTML}
             </section>
         </article>
 

@@ -1,5 +1,3 @@
-
-
 // Create and export a function that fetches the metal objects from our local database
 export const MetalOptions = async () => {
     // fetch the metals data from our local api
