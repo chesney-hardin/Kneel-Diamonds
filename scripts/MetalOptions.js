@@ -1,3 +1,14 @@
+import { setMetalChoice } from "./TransientState.js"
+
+
+const handleMetalChoice = (event) => {
+    if(event.target.name === "metal") {
+        setMetalChoice(parseInt(event.target.value))
+    }
+}
+
+document.addEventListener("change", handleMetalChoice)
+
 // Create and export a function that fetches the metal objects from our local database
 export const MetalOptions = async () => {
     // fetch the metals data from our local api
@@ -6,9 +17,16 @@ export const MetalOptions = async () => {
     const metals = await response.json()
 
     let metalHTML = ""
-    for (const metal of metals) {
-        metalHTML += `<input type='radio' name='metal' value='${metal.metal}'/> ${metal.metal}`
-    }
+    
+    const divStringArray = metals.map(
+        (metal) => {
+            return `<div>
+            <input type='radio' name='metal' value='${metal.id}'/> ${metal.metal}
+            </div>`
+        }
+    )
+
+     metalHTML += divStringArray.join("")
 
     return metalHTML
 }
