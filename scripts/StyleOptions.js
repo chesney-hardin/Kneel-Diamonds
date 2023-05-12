@@ -1,3 +1,16 @@
+import { setStyleChoice } from "./TransientState.js"
+
+
+const handleStyleChoice = (event) => {
+    if(event.target.name === "style") {
+        setStyleChoice(parseInt(event.target.value))
+    }
+}
+
+document.addEventListener("change", handleStyleChoice)
+
+
+
 // Create and export a function that fetches the style objects from our local database
 export const StyleOptions = async () => {
     // fetch the styles data from our local api
@@ -6,9 +19,15 @@ export const StyleOptions = async () => {
     const styles = await response.json()
 
     let styleHTML = ""
-    for (const style of styles) {
-        styleHTML += `<input type='radio' name='style' value='${style.style}'/> ${style.style}`
-    }
+    const divStringArray = styles.map(
+        (style) => {
+            return `<div>
+            <input type='radio' name='style' value='${style.id}'/> ${style.style} 
+            </div>`
+        }
+    )
+
+    styleHTML += divStringArray.join("")
 
     return styleHTML
 }
