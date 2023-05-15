@@ -22,3 +22,20 @@ export const setStyleChoice = (chosenStyle) => {
     transientState.styleId = chosenStyle
     console.log(transientState)
 }
+
+//function to convert the transient state into permanent state
+export const placeOrder = async () => {
+    const postOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(transientState)
+    }
+
+    await fetch("http://localhost:8088/orders", postOptions)
+
+    const customEvent = new CustomEvent("newOrderSubmitted")
+    document.dispatchEvent(customEvent)
+
+}
