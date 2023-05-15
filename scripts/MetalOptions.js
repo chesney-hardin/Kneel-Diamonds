@@ -26,7 +26,7 @@ export const MetalOptions = async () => {
         }
     )
 
-     metalHTML += divStringArray.join("")
+    metalHTML += divStringArray.join("")
 
     return metalHTML
 }
