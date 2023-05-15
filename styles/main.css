@@ -1,0 +1,32 @@
+.choices{
+    display: flex;
+    justify-content: space-evenly;
+    
+
+}
+.options {
+    border: 3px dotted lightskyblue;
+    border-radius: 5px;
+    background-color: gold;
+    margin: 15px;
+    padding: 0px 10px 15px 10px;
+    flex-grow: 1;
+}
+
+.orderPrice {
+    border: 2px dotted lightskyblue;
+    border-radius: 5px;
+    background-color: gold;
+    margin: 5px;
+    padding: 10px;
+}
+
+body {
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.fQDj0qTRH4PL_3RS1UusCQHaF7%26pid%3DApi&f=1&ipt=d691736dbb6e693b7bee7d5383aeddd345220de5d2c141c9b300dbb808f40824&ipo=images');
+}
+
+h1, h2 {
+    color: blue;
+    text-shadow: 1px 1px 1px darkblue;
+    background-color: aliceblue;
+}
