@@ -11,8 +11,8 @@ export const Orders = async () => {
     let ordersHTMLArray = orders.map(
         (order) => {
             const orderPrice = order.metal.price + order.style.price + order.size.price
-            return `<div>
-            Order #${order.id} cost ${orderPrice}
+            return `<div class ="orderPrice" >
+            Order #${order.id} cost $${orderPrice}
             </div>`
         }
     )
